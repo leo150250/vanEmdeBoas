@@ -1,0 +1,77 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+.no {
+    background-color: #EEE;
+    border: 1px solid #DDD;
+    display: inline-block;
+    padding: 0.5em;
+    position: absolute;
+    user-select: none;
+}
+.no * {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    display: inline;
+    margin: 0.25em;
+    padding: 0.25em;
+}
+.no hr {
+    display: block;
+    padding: 0;
+    margin: 0.5em 0;
+}
+.no .u::before {
+    content: "u: ";
+}
+.no .min::before {
+    content: "min: ";
+}
+.no .max::before {
+    content: "max: ";
+}
+.no .sumario::before {
+    content: "sum";
+}
+.linha {
+    padding: 0;
+    margin: 0;
+    height: 2px;
+    background-color: #000;
+    line-height: 1px;
+    position: absolute;
+}
+
+#config {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #DDD;
+    height: 5em;
+}
+
+#arvore {
+    position: fixed;
+    top: 5em;
+    width: 100%;
+    height: calc(100% - 10em);
+    background-color: #FFF;
+    overflow: scroll;
+}
+
+#rodape {
+    position: fixed;
+    bottom: 0;
+    height: 5em;
+    width: 100%;
+    text-align: right;
+    background-color: #DDD;
+}

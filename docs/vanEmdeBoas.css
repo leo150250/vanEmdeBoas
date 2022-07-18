@@ -8,14 +8,30 @@ body, html {
     color: #333;
     background-color: #fff;
 }
-
+input[type="number"] {
+    width: 3em;
+}
 .no {
-    background-color: #EEE;
+    background-color: #BBE;
     border: 1px solid #DDD;
     display: inline-block;
     padding: 0.5em;
     position: absolute;
     user-select: none;
+    cursor: grab;
+    width: 12em;
+}
+.no.sumario {
+    background-color: #AAA;
+}
+.no.cluster {
+    background-color: #EEE;
+}
+.no.destaque {
+    background-color: #FF0;
+    border: 1px solid #0F0;
+    box-shadow: 0 0 10px #0F0;
+    z-index: 1;
 }
 .no * {
     background-color: #FFF;
@@ -29,17 +45,29 @@ body, html {
     padding: 0;
     margin: 0.5em 0;
 }
+.no .u {
+    white-space: nowrap;
+}
 .no .u::before {
     content: "u: ";
 }
+.no .min {
+    white-space: nowrap;
+}
 .no .min::before {
     content: "min: ";
+}
+.no .max {
+    white-space: nowrap;
 }
 .no .max::before {
     content: "max: ";
 }
 .no .sumario::before {
     content: "sum";
+}
+.no .clusters .cluster {
+    margin: 0;
 }
 .linha {
     padding: 0;
@@ -56,17 +84,82 @@ body, html {
     width: 100%;
     background-color: #DDD;
     height: 5em;
+    display: flex;
+}
+
+#config p {
+    border-left: 1px solid #CCF;
+    border-right: 1px solid #88B;
+    margin: 0;
+    padding: 1em;
+    flex-grow: 2;
 }
 
 #arvore {
     position: fixed;
     top: 5em;
-    width: 100%;
-    height: calc(100% - 10em);
+    width: calc(100% - 25em);
+    height: calc(100% - 13em);
     background-color: #FFF;
     overflow: scroll;
+    user-select: none;
+}
+#arvore * {
+    user-select: none;
 }
 
+#log {
+    position: fixed;
+    top: 5em;
+    right: 0;
+    width: 25em;
+    height: calc(100% - 13em);
+    background-color: #EEE;
+    overflow-y: scroll;
+}
+#log .log:hover {
+    background-color: #FF0;
+    border-color: #0F0;
+    box-shadow: 0 0 10px #0F0;
+}
+#log .log {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #888;
+    display: flex;
+}
+#log .log.destaque {
+    background-color: #0F0;
+}
+#log .log p {
+    margin: 0;
+    padding: 0.25em;
+}
+#log .subnivel {
+    display: inline-block;
+    width: 1em;
+    background-color: #CCC;
+    border-left: 1px solid #DDD;
+    flex-shrink: 0;
+}
+#vetor {
+    position: fixed;
+    bottom: 5em;
+    width: 100%;
+    height: calc(3em);
+    background-color: #BBE;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+}
+#vetor .indiceVetor {
+    display: block;
+    padding: 1em;
+    border-left: 1px solid #CCF;
+    border-right: 1px solid #88B;
+}
+#vetor .indiceVetor.ok {
+    background-color: #4E4;
+}
 #rodape {
     position: fixed;
     bottom: 0;

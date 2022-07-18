@@ -6,10 +6,16 @@
     </head>
     <body>
         <div id="config">
-            <p>Universo: <input type="number" required></p>
+            <p>Universo: <input id="configUniverso" type="number" value="8" min="2" required><br><button onclick="gerarArvore()">Gerar nova árvore</button></p>
+            <p>Inserir número: <input id="configInserir" type="number" min="0" required><br><button onclick="inserirNumero()">Inserir</button></p> 
+            <p>Deletar número: <input id="configDeletar" type="number" min="0" required><br><button onclick="deletarNumero()">Deletar</button></p>
+            <p>Buscar número: <input id="configBuscar" type="number" min="0" value="5" required><br><button onclick="buscarNumero()">Buscar</button> <button onclick="antecessorNumero()">Antecessor</button> <button onclick="sucessorNumero()">Sucessor</button></p>
         </div>
         <div id="arvore">
-
+        </div>
+        <div id="log">
+        </div>
+        <div id="vetor">
         </div>
         <div id="rodape">
             <p>Simulador de van Emde Boas 0.1 - EDA, Profº Igor Machado - IC/UFF<br>Desenvolvido por <a href="http://leandrogabriel.net/">LeandroGabriel.net</a>, 2022 | HIC SUNT DEFECTIS</p>
